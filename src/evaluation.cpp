@@ -377,6 +377,8 @@ Value IsList::evalRator(const Value &v) {
 }
 
 Value Car::evalRator(const Value &v) {
+    // DEBUG
+    // std::cerr << "[DEBUG] Car arg v_type=" << v->v_type << "\n";
     if (v.get() == nullptr) throw RuntimeError("car on invalid value");
     if (v->v_type != V_PAIR) throw RuntimeError("car on non-pair");
     Pair* p = dynamic_cast<Pair*>(v.get());
@@ -385,6 +387,8 @@ Value Car::evalRator(const Value &v) {
 }
 
 Value Cdr::evalRator(const Value &v) {
+    // DEBUG
+    // std::cerr << "[DEBUG] Cdr arg v_type=" << v->v_type << "\n";
     if (v.get() == nullptr) throw RuntimeError("cdr on invalid value");
     if (v->v_type != V_PAIR) throw RuntimeError("cdr on non-pair");
     Pair* p = dynamic_cast<Pair*>(v.get());
